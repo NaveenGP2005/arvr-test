@@ -1,0 +1,10 @@
+yaml
+services:
+  codecraft-ar:
+    build: .
+    start: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
