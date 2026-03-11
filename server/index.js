@@ -10,63 +10,48 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
 const PORT = process.env.PORT || 5000
 
-// Middleware
 app.use(cors())
 app.use(express.json())
 
-// Serve static files
+// Serve static files from React build
 app.use(express.static(path.join(__dirname, '../dist')))
 
-// API Routes
-
-// Explain endpoint - uses Groq API (free tier)
-app.post('/explain', async (req, res) => {
+// POST /api/explain
+app.post('/api/explain', async (req, res) => {
   try {
-    const { algorithm, steps } = req.body
+    const { algorithm } = req.body
 
-    // Free tier placeholder - returns a basic explanation
-    const explanations: Record<string, string> = {
-      'bubble-sort': 'Bubble sort compares adjacent elements and swaps them if they are in the wrong order. This process repeats until the array is sorted.',
-      'quick-sort': 'Quick sort picks a pivot element and partitions the array around it, then recursively sorts the sub-arrays.',
-      'merge-sort': 'Merge sort divides the array into halves, recursively sorts them, and then merges the sorted halves.',
-      'binary-search': 'Binary search repeatedly divides the search space in half, comparing the target with the middle element.',
-      'linear-search': 'Linear search goes through each element sequentially until finding the target.',
-      'bfs': 'Breadth-First Search explores a graph level by level, visiting all neighbors before moving deeper.',
-      'dfs': 'Depth-First Search explores a graph by going as deep as possible before backtracking.',
-      'linked-list': 'Linked List operations involve traversing or modifying nodes connected by pointers.',
+    const explanations = {
+      'bubble-sort': 'Bubble Sort repeatedly compares adjacent elements and swaps them if out of order. Time: O(n²). Space: O(1).',
+      'quick-sort': 'Quick Sort picks a pivot and partitions the array around it, then recursively sorts each side. Time: O(n log n) avg. Space: O(log n).',
+      'merge-sort': 'Merge Sort divides the array in half, sorts each half, then merges them. Time: O(n log n). Space: O(n).',
+      'binary-search': 'Binary Search halves the sorted search space each step by comparing with the middle. Time: O(log n). Space: O(1).',
+      'linear-search': 'Linear Search checks each element one by one until the target is found. Time: O(n). Space: O(1).',
+      'bfs': 'Breadth-First Search explores a graph level by level using a queue. Time: O(V+E).',
+      'dfs': 'Depth-First Search explores as far as possible down each branch using a stack. Time: O(V+E).',
+      'linked-list': 'Linked List stores nodes with data and a pointer to the next node. Insert: O(1). Search: O(n).',
+      'graph-traversal': 'Graph Traversal visits all vertices using BFS or DFS strategies.',
     }
 
-    const explanation = explanations[algorithm] || 'Algorithm explanation not available'
+    const explanation = explanations[algorithm] || `${algorithm} is an important algorithm. Select a specific one to learn more.`
 
-    res.json({ 
-      explanation,
-      timestamp: new Date().toISOString(),
-      source: 'free-tier'
-    })
+    res.json({ explanation, timestamp: new Date().toISOString() })
   } catch (error) {
-    console.error('Explain endpoint error:', error)
+    console.error('Error:', error)
     res.status(500).json({ error: 'Failed to generate explanation' })
   }
 })
 
-// Health check
-app.get('/health', (req, res) => {
+// GET /api/health
+app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() })
 })
 
-// Serve React app for all other routes
+// Serve React app for all other routes (MUST be last)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'))
 })
 
-// Error handling
-app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  console.error(err)
-  res.status(500).json({ error: 'Internal server error' })
-})
-
 app.listen(PORT, () => {
-  console.log(`🚀 CodeCraft AR server running on http://localhost:${PORT}`)
-  console.log(`📚 Free tier - Limited Groq API calls`)
-  console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`)
+  console.log(`Server running on port ${PORT}`)
 })
