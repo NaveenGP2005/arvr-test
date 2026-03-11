@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom'
-import { ArrowRight, Zap, Brain, Eye, Code } from 'lucide-react'
+import { Link } from "react-router-dom";
+import { ArrowRight, Zap, Brain, Eye, Code } from "lucide-react";
 
 export default function Home() {
   const algorithms = [
-    { name: 'Bubble Sort', id: 'bubble-sort', icon: Zap },
-    { name: 'Binary Search', id: 'binary-search', icon: Brain },
-    { name: 'DFS/BFS', id: 'graph-traversal', icon: Eye },
-    { name: 'Linked Lists', id: 'linked-list', icon: Code },
-  ]
+    { name: "Bubble Sort", id: "bubble-sort", icon: Zap },
+    { name: "Binary Search", id: "binary-search", icon: Brain },
+    { name: "DFS/BFS", id: "graph-traversal", icon: Eye },
+    { name: "Linked Lists", id: "linked-list", icon: Code },
+  ];
 
   return (
     <div className="space-y-16">
@@ -17,11 +17,16 @@ export default function Home() {
           Step Into Your Code
         </h1>
         <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-          Visualize algorithms and data structures in AR. Watch sorting algorithms rearrange 3D blocks in your room. Understand complexity with AI-powered explanations.
+          Visualize algorithms and data structures in AR. Watch sorting
+          algorithms rearrange 3D blocks in your room. Understand complexity
+          with AI-powered explanations.
         </p>
-        
+
         <div className="flex gap-4 justify-center pt-8">
-          <Link to="/visualizer" className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition">
+          <Link
+            to="/visualizer"
+            className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition"
+          >
             Start Visualizing
             <ArrowRight className="w-4 h-4" />
           </Link>
@@ -36,17 +41,24 @@ export default function Home() {
         <div className="bg-slate-800 p-8 rounded-lg border border-slate-700">
           <Eye className="w-8 h-8 text-blue-400 mb-4" />
           <h3 className="text-xl font-bold mb-2">Visual Learning</h3>
-          <p className="text-slate-400">Watch algorithms execute in real-time with animated 3D visualizations</p>
+          <p className="text-slate-400">
+            Watch algorithms execute in real-time with animated 3D
+            visualizations
+          </p>
         </div>
         <div className="bg-slate-800 p-8 rounded-lg border border-slate-700">
           <Brain className="w-8 h-8 text-cyan-400 mb-4" />
           <h3 className="text-xl font-bold mb-2">AI Explanations</h3>
-          <p className="text-slate-400">Get instant explanations powered by Groq API about every step</p>
+          <p className="text-slate-400">
+            Get instant explanations powered by Groq API about every step
+          </p>
         </div>
         <div className="bg-slate-800 p-8 rounded-lg border border-slate-700">
           <Zap className="w-8 h-8 text-yellow-400 mb-4" />
           <h3 className="text-xl font-bold mb-2">AR Experience</h3>
-          <p className="text-slate-400">Experience algorithms in augmented reality on your mobile device</p>
+          <p className="text-slate-400">
+            Experience algorithms in augmented reality on your mobile device
+          </p>
         </div>
       </section>
 
@@ -54,10 +66,10 @@ export default function Home() {
       <section className="space-y-8">
         <h2 className="text-3xl font-bold">Available Algorithms</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {algorithms.map(algo => {
-            const Icon = algo.icon
+          {algorithms.map((algo) => {
+            const Icon = algo.icon;
             return (
-              <Link 
+              <Link
                 key={algo.id}
                 to={`/ar/${algo.id}`}
                 className="bg-slate-800 hover:bg-slate-700 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition group"
@@ -66,10 +78,10 @@ export default function Home() {
                 <h3 className="font-semibold text-lg mb-2">{algo.name}</h3>
                 <p className="text-sm text-slate-400">Visualize in AR</p>
               </Link>
-            )
+            );
           })}
         </div>
       </section>
     </div>
-  )
+  );
 }

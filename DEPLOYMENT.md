@@ -46,12 +46,15 @@ npm run server:dev
 ### Find Your Machine's IP
 
 **Windows:**
+
 ```bash
 ipconfig
 ```
+
 Look for "IPv4 Address" (e.g., 192.168.x.x)
 
 **macOS/Linux:**
+
 ```bash
 hostname -I
 ```
@@ -59,9 +62,11 @@ hostname -I
 ### Access from Mobile
 
 1. **On your phone's browser, visit:**
+
    ```
    http://<YOUR_IP>:3000
    ```
+
    Example: `http://192.168.1.100:3000`
 
 2. **Make sure phone and computer are on same WiFi**
@@ -110,6 +115,7 @@ git push -u origin main
    - Click Connect
 
 3. **Configure Service:**
+
    ```
    Name: codecraft-ar
    Environment: Node
@@ -166,7 +172,7 @@ Generate a QR code pointing to your Render URL for easy sharing.
 
 ## ⚙️ Configuration for Production
 
-###  `.env.production` (Optional)
+### `.env.production` (Optional)
 
 ```env
 NODE_ENV=production
@@ -183,6 +189,7 @@ GROQ_API_KEY=your_free_tier_key_here
 ### Preventing Spin-Down
 
 Render free tier can be unreliable. Consider:
+
 - Upgrading to $7/month to keep instance always on
 - Using uptime monitoring (Pingdom, UptimeRobot)
 
@@ -222,6 +229,7 @@ Render free tier can be unreliable. Consider:
 **Error:** `npm install` fails
 
 **Fix:**
+
 ```bash
 # Locally, ensure this works:
 npm install
@@ -238,6 +246,7 @@ git push origin main
 **Error:** 404 or API calls failing
 
 **Check:**
+
 1. Backend server started: `npm run server:dev`
 2. Environment variables set in Render
 3. Proxy config in `vite.config.ts` is correct
@@ -248,6 +257,7 @@ git push origin main
 **Error:** White screen on phone
 
 **Fix:**
+
 1. Check mobile browser console (F12 on desktop or DevTools on phone)
 2. Ensure CORS is enabled in backend
 3. Try incognito/private browsing (cache issues)
@@ -255,6 +265,7 @@ git push origin main
 ### Slow on Mobile
 
 **Optimize:**
+
 - Render free tier can be slow
 - Reduce visualization to <20 elements
 - Clear browser cache
@@ -284,18 +295,21 @@ git push origin main
 ## 🎓 Next Steps for Improvement
 
 ### Short Term
+
 - [ ] Add more algorithms (insertion sort, heap sort)
 - [ ] Implement step-by-step execution with pause/resume
 - [ ] Add execution complexity counter (O(n²), etc.)
 - [ ] Color-code comparisons in visualization
 
 ### Medium Term
+
 - [ ] Connect to Groq API (paid tier) for real AI explanations
 - [ ] Add custom 3D models using Three.js
 - [ ] Implement user authentication
 - [ ] Store user progress in database
 
 ### Long Term
+
 - [ ] Mobile app with Capacitor/React Native
 - [ ] WebAR visualization (ARCore on Android, ARKit on iOS)
 - [ ] Multiplayer learning mode
@@ -339,16 +353,19 @@ npm run build
 ## 📞 Support & Resources
 
 ### Render Docs
+
 - [Render Web Services](https://render.com/docs/web-services)
 - [Environment Variables](https://render.com/docs/environment-variables)
 - [GitHub Integration](https://render.com/docs/github)
 
 ### CodeCraft AR Resources
+
 - GitHub: [your-repo-url]
 - Live: https://codecraft-ar.onrender.com
 - Issues: GitHub Issues tab
 
 ### Tech Stack Docs
+
 - [React](https://react.dev)
 - [Vite](https://vitejs.dev)
 - [Tailwind CSS](https://tailwindcss.com)
@@ -360,6 +377,7 @@ npm run build
 ## ✨ Final Notes
 
 🎉 **You now have:**
+
 - ✅ Production-ready React app
 - ✅ Express backend API
 - ✅ Free Render deployment
@@ -368,6 +386,7 @@ npm run build
 - ✅ AR-ready architecture
 
 📱 **To access on your phone:**
+
 1. **Locally:** http://YOUR_IP:3000
 2. **Production:** https://codecraft-ar.onrender.com
 

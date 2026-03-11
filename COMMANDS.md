@@ -5,24 +5,28 @@
 ### Open 2 Terminals
 
 #### Terminal 1 - Frontend (Port 3000)
+
 ```bash
 cd /d/Study/Assignment/"CodeCraft AR"
 npm run dev
 ```
 
 **Expected Output:**
+
 ```
   VITE v5.4.21  ready in 780 ms
   ➜  Local:   http://localhost:3000/
 ```
 
 #### Terminal 2 - Backend (Port 5000)
+
 ```bash
 cd /d/Study/Assignment/"CodeCraft AR"
 npm run server:dev
 ```
 
 **Expected Output:**
+
 ```
 🚀 CodeCraft AR server running on http://localhost:5000
 📚 Free tier - Limited Groq API calls
@@ -33,6 +37,7 @@ npm run server:dev
 ## 🌐 Access Points
 
 ### Local Development
+
 ```
 Frontend:  http://localhost:3000
 Backend:   http://localhost:5000
@@ -40,12 +45,14 @@ Health:    http://localhost:5000/health
 ```
 
 ### Mobile (Same WiFi)
+
 ```
 Phone:     http://YOUR_IP:3000
 Example:   http://192.168.1.100:3000
 ```
 
 ### Production (After Render Deploy)
+
 ```
 Live URL:  https://codecraft-ar.onrender.com
 ```
@@ -55,23 +62,27 @@ Live URL:  https://codecraft-ar.onrender.com
 ## 📦 Dependency Management
 
 ### Install/Reinstall
+
 ```bash
 cd /d/Study/Assignment/"CodeCraft AR"
 npm install
 ```
 
 ### Update Dependencies
+
 ```bash
 npm update
 ```
 
 ### Check Vulnerabilities
+
 ```bash
 npm audit
 npm audit fix  # Auto-fix
 ```
 
 ### Clear Cache
+
 ```bash
 npm cache clean --force
 rm -rf node_modules
@@ -83,11 +94,13 @@ npm install
 ## 🔨 Building
 
 ### Development Build (with source maps)
+
 ```bash
 npm run build
 ```
 
 ### Check Build Output
+
 ```bash
 # File sizes
 ls -lh dist/
@@ -97,6 +110,7 @@ npm run build 2>&1 | grep -E "(gzip|kB|error|warning)"
 ```
 
 ### Preview Production Build
+
 ```bash
 npm run preview
 ```
@@ -106,16 +120,19 @@ npm run preview
 ## 🧪 Testing
 
 ### Run All Tests
+
 ```bash
 npm test  # When test suite is added
 ```
 
 ### Check for Errors
+
 ```bash
 npm run build  # Catches TypeScript errors
 ```
 
 ### Lint Check
+
 ```bash
 # When ESLint is configured
 npm run lint
@@ -128,6 +145,7 @@ npm run lint
 ### Deploy to Render
 
 #### Step 1: Initialize Git
+
 ```bash
 cd /d/Study/Assignment/"CodeCraft AR"
 git init
@@ -136,6 +154,7 @@ git commit -m "Initial commit: CodeCraft AR"
 ```
 
 #### Step 2: Add GitHub Remote
+
 ```bash
 git remote add origin https://github.com/YOUR_USERNAME/codecraft-ar.git
 git branch -M main
@@ -143,6 +162,7 @@ git push -u origin main
 ```
 
 #### Step 3: On Render Dashboard
+
 1. New → Web Service
 2. Select repository: `codecraft-ar`
 3. Build Command: `npm install && npm run build`
@@ -150,11 +170,13 @@ git push -u origin main
 5. Click "Create Web Service"
 
 #### Step 4: After Deployment
+
 ```
 Live at: https://codecraft-ar.onrender.com
 ```
 
 ### Push Updates to Production
+
 ```bash
 # Make changes locally
 git add .
@@ -170,6 +192,7 @@ git push origin main
 ### Environment Variables
 
 #### Create `.env` for local development
+
 ```bash
 cd /d/Study/Assignment/"CodeCraft AR"
 cat > .env << EOF
@@ -180,6 +203,7 @@ EOF
 ```
 
 #### Set on Render Dashboard
+
 1. Service Settings → Environment
 2. Add variables:
    ```
@@ -192,6 +216,7 @@ EOF
 ## 📊 Monitoring & Debugging
 
 ### Check Ports
+
 ```bash
 # Windows
 netstat -ano | findstr :3000
@@ -202,6 +227,7 @@ lsof -i :5000
 ```
 
 ### Kill Process on Port
+
 ```bash
 # Windows (PowerShell)
 Get-Process | Where-Object {$_.Port -eq 3000} | Stop-Process
@@ -211,12 +237,14 @@ kill -9 $(lsof -t -i:3000)
 ```
 
 ### View Build Logs
+
 ```bash
 npm run build 2>&1 | tee build.log
 cat build.log | grep -i error
 ```
 
 ### Monitor Dev Server
+
 ```bash
 npm run dev 2>&1 | tee dev.log
 tail -f dev.log  # Live monitoring
@@ -227,6 +255,7 @@ tail -f dev.log  # Live monitoring
 ## 📁 File Organization
 
 ### Project Structure
+
 ```bash
 # List all files
 ls -la
@@ -239,6 +268,7 @@ find src -name "*.tsx" -o -name "*.ts" | xargs wc -l
 ```
 
 ### Cleanup Commands
+
 ```bash
 # Remove build artifacts
 rm -rf dist
@@ -257,6 +287,7 @@ npm cache clean --force
 ## 🐛 Debugging
 
 ### Enable Verbose Output
+
 ```bash
 # Vite verbose
 npm run dev -- --debug
@@ -269,6 +300,7 @@ NODE_DEBUG=express npm run server:dev
 ```
 
 ### Browser DevTools (F12)
+
 ```
 Console  → JavaScript errors
 Network  → API calls (check /api/explain)
@@ -277,6 +309,7 @@ Sources  → Set breakpoints
 ```
 
 ### VS Code Debugging
+
 ```json
 // .vscode/launch.json
 {
@@ -298,6 +331,7 @@ Sources  → Set breakpoints
 ## 📝 Git Commands
 
 ### Basic Workflow
+
 ```bash
 # Check status
 git status
@@ -317,6 +351,7 @@ git push origin main
 ```
 
 ### Undo Changes
+
 ```bash
 # Undo unstaged changes
 git checkout -- filename
@@ -336,6 +371,7 @@ git reset --hard HEAD~1
 ## 🔍 Search & Find
 
 ### Find Files
+
 ```bash
 # Find TypeScript files
 find src -name "*.tsx"
@@ -348,6 +384,7 @@ grep -r "TODO" src/
 ```
 
 ### View File Contents
+
 ```bash
 # Show specific file
 cat src/App.tsx
@@ -367,6 +404,7 @@ grep "useState" src/pages/AlgorithmVisualizer.tsx
 ## 📊 Project Statistics
 
 ### Quick Stats
+
 ```bash
 # Total lines of code
 find src -name "*.tsx" -o -name "*.ts" | xargs wc -l
@@ -390,6 +428,7 @@ npm list --depth=0
 ## 🌍 Network Testing
 
 ### Find Your IP Address
+
 ```bash
 # Windows
 ipconfig
@@ -404,6 +443,7 @@ ip addr show
 ```
 
 ### Test API Endpoint
+
 ```bash
 # Test health check
 curl http://localhost:5000/health
@@ -418,6 +458,7 @@ curl -X POST http://localhost:5000/explain \
 ```
 
 ### Check if Port is Open
+
 ```bash
 # Test port 3000
 curl http://localhost:3000
@@ -431,6 +472,7 @@ curl http://localhost:5000
 ## 🔐 Security
 
 ### Environment Variables
+
 ```bash
 # Never commit .env
 echo ".env" >> .gitignore
@@ -444,6 +486,7 @@ cp .env .env.example
 ```
 
 ### Security Audit
+
 ```bash
 # Check for vulnerabilities
 npm audit
@@ -461,6 +504,7 @@ git diff
 ## 📞 Useful Links (Command Shortcuts)
 
 ### Local
+
 ```
 Frontend: http://localhost:3000
 Backend:  http://localhost:5000
@@ -468,6 +512,7 @@ Network:  http://YOUR_IP:3000
 ```
 
 ### Online
+
 ```
 GitHub:          https://github.com
 Render:          https://render.com
@@ -475,6 +520,7 @@ Live App:        https://codecraft-ar.onrender.com
 ```
 
 ### Documentation
+
 ```
 QUICKSTART.md    - 5 min quick start
 DEPLOYMENT.md    - Full deployment guide
@@ -486,6 +532,7 @@ README.md        - Complete documentation
 ## 🎯 Common Tasks
 
 ### "App won't start"
+
 ```bash
 # Kill old process
 lsof -ti:3000 | xargs kill -9
@@ -499,6 +546,7 @@ npm run dev
 ```
 
 ### "Build failing"
+
 ```bash
 # Clean rebuild
 rm -rf dist
@@ -509,6 +557,7 @@ npm run build 2>&1 | grep error
 ```
 
 ### "API not responding"
+
 ```bash
 # Test endpoint
 curl http://localhost:5000/health
@@ -521,6 +570,7 @@ npm run server:dev
 ```
 
 ### "Mobile can't access"
+
 ```bash
 # Verify on same WiFi
 ipconfig  # Get your IP
@@ -537,17 +587,20 @@ netsh advfirewall firewall add rule name="Node" dir=in action=allow program="nod
 ## 💡 Pro Commands
 
 ### One-Liner to Setup & Run
+
 ```bash
 cd /d/Study/Assignment/"CodeCraft AR" && npm install && npm run build && npm run dev &
 ```
 
 ### One-Liner to Deploy
+
 ```bash
 git add . && git commit -m "Update" && git push origin main
 # Then Render auto-deploys
 ```
 
 ### Monitor Both Servers
+
 ```bash
 # Terminal 1
 npm run dev
@@ -563,6 +616,7 @@ npm run server:dev
 ## 📚 Help & Documentation
 
 ### In-Project Help
+
 ```bash
 # Read main guide
 cat QUICKSTART.md
@@ -575,6 +629,7 @@ cat README.md
 ```
 
 ### Online Help
+
 ```bash
 # Vite help
 npm run dev -- --help
@@ -593,6 +648,7 @@ node
 ## ✅ Command Checklist
 
 Before going live, run:
+
 ```bash
 ✓ npm install          # Install deps
 ✓ npm run build        # Check build works
@@ -607,6 +663,7 @@ Before going live, run:
 ## 🎉 Ready to Go!
 
 You now have all the commands needed to:
+
 - ✅ Develop locally
 - ✅ Test on mobile
 - ✅ Deploy to production
@@ -614,6 +671,7 @@ You now have all the commands needed to:
 - ✅ Manage code
 
 **Start here:**
+
 ```bash
 npm run dev
 # Visit http://localhost:3000

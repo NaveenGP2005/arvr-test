@@ -19,12 +19,14 @@ Your **CodeCraft AR** application is fully set up and ready to test!
 ### Step 1: Start the Servers
 
 **Terminal 1 - Frontend (port 3000):**
+
 ```bash
 cd /d/Study/Assignment/"CodeCraft AR"
 npm run dev
 ```
 
 **Terminal 2 - Backend API (port 5000):**
+
 ```bash
 cd /d/Study/Assignment/"CodeCraft AR"
 npm run server:dev
@@ -37,6 +39,7 @@ http://localhost:3000
 ```
 
 You should see:
+
 - 🏠 Beautiful hero section with "Step Into Your Code"
 - 📊 Algorithm visualizer
 - 🧠 AI Explainer panel
@@ -59,6 +62,7 @@ ipconfig
 
 1. **Make sure phone is on same WiFi as computer**
 2. **Open mobile browser and visit:**
+
    ```
    http://192.168.1.100:3000
    ```
@@ -108,24 +112,28 @@ CodeCraft AR/
 ## 🎓 Features Implemented
 
 ### ✅ Algorithm Selection
+
 - Bubble Sort, Quick Sort, Merge Sort
 - Binary Search, Linear Search
 - BFS & DFS (Graph traversal)
 - Linked List Operations
 
 ### ✅ Data Visualization
+
 - Interactive 3D bar charts
 - Real-time algorithm execution
 - Animated array transformations
 - Element count display
 
 ### ✅ AI Explanations (Free Tier)
+
 - Basic algorithm explanations
 - Complexity analysis
 - Step-by-step walkthroughs
 - Powered by Groq API
 
 ### ✅ User Interface
+
 - Beautiful dark theme (slate-900)
 - Responsive design (mobile-first)
 - Smooth animations
@@ -133,6 +141,7 @@ CodeCraft AR/
 - Accessible buttons & inputs
 
 ### ✅ AR Support
+
 - Mobile WebAR ready
 - QR code scanning ready
 - A-Frame VR integration
@@ -142,22 +151,23 @@ CodeCraft AR/
 
 ## 🔧 Technology Stack
 
-| Component | Technology |
-|-----------|-----------|
-| **Frontend** | React 18 + TypeScript |
-| **Styling** | Tailwind CSS 3 |
-| **3D Rendering** | Three.js + A-Frame |
-| **Build Tool** | Vite 5 |
-| **Backend** | Express.js |
-| **API** | Groq (AI explanations) |
-| **Hosting** | Render (free tier) |
-| **Icons** | Lucide React |
+| Component        | Technology             |
+| ---------------- | ---------------------- |
+| **Frontend**     | React 18 + TypeScript  |
+| **Styling**      | Tailwind CSS 3         |
+| **3D Rendering** | Three.js + A-Frame     |
+| **Build Tool**   | Vite 5                 |
+| **Backend**      | Express.js             |
+| **API**          | Groq (AI explanations) |
+| **Hosting**      | Render (free tier)     |
+| **Icons**        | Lucide React           |
 
 ---
 
 ## 📊 Key Files Explained
 
 ### Frontend Routes (`src/App.tsx`)
+
 ```typescript
 /           → Home page
 /visualizer → Algorithm visualizer
@@ -165,12 +175,14 @@ CodeCraft AR/
 ```
 
 ### Backend API (`server/index.js`)
+
 ```
 POST /api/explain  → Get AI explanation
 GET  /health      → Health check
 ```
 
 ### Styling (`src/index.css`)
+
 - Tailwind directives
 - Custom scrollbar
 - Smooth scrolling
@@ -180,6 +192,7 @@ GET  /health      → Health check
 ## 🧪 Testing Checklist
 
 ### Local Desktop Testing
+
 - [ ] Home page loads
 - [ ] Navigation works (Home, Visualizer, Docs)
 - [ ] Can select algorithm
@@ -190,6 +203,7 @@ GET  /health      → Health check
 - [ ] 404 page shows for invalid routes
 
 ### Mobile Testing (WiFi)
+
 - [ ] Page loads on phone browser
 - [ ] Layout responsive (no overflow)
 - [ ] Buttons clickable with thumb
@@ -199,6 +213,7 @@ GET  /health      → Health check
 - [ ] Dark theme readable on mobile
 
 ### API Testing
+
 - [ ] Open DevTools → Network
 - [ ] Go to /visualizer
 - [ ] See POST request to `/api/explain`
@@ -210,6 +225,7 @@ GET  /health      → Health check
 ## 🚀 Deploy to Render (3 Easy Steps)
 
 ### Step 1: Push to GitHub
+
 ```bash
 cd /d/Study/Assignment/"CodeCraft AR"
 git init
@@ -221,11 +237,13 @@ git push -u origin main
 ```
 
 ### Step 2: Create Render Account
+
 1. Visit [render.com](https://render.com)
 2. Sign up with GitHub
 3. Authorize repository access
 
 ### Step 3: Deploy
+
 1. Click "New" → "Web Service"
 2. Select your `codecraft-ar` repo
 3. Build: `npm install && npm run build`
@@ -241,22 +259,26 @@ git push -u origin main
 ### Add a New Algorithm
 
 1. **Update selector** (`src/components/AlgorithmSelector.tsx`):
+
 ```typescript
 const algorithms = [
   // ... existing
-  { id: 'insertion-sort', label: 'Insertion Sort' },
-]
+  { id: "insertion-sort", label: "Insertion Sort" },
+];
 ```
 
 2. **Add explanation** (`server/index.js`):
+
 ```javascript
 const explanations = {
   // ... existing
-  'insertion-sort': 'Insertion sort builds the sorted array one item at a time...'
-}
+  "insertion-sort":
+    "Insertion sort builds the sorted array one item at a time...",
+};
 ```
 
 3. **Test & deploy:**
+
 ```bash
 npm run build
 npm start
@@ -265,6 +287,7 @@ npm start
 ### Change Color Theme
 
 Edit `tailwind.config.js` theme colors:
+
 ```javascript
 theme: {
   extend: {
@@ -279,6 +302,7 @@ theme: {
 ### Modify UI Layout
 
 Edit components in `src/components/`:
+
 - `Header.tsx` - Top navigation
 - `AlgorithmSelector.tsx` - Algorithm dropdown
 - `VisualizationCanvas.tsx` - 3D visualization area
@@ -289,6 +313,7 @@ Edit components in `src/components/`:
 ## ⚡ Performance Tips
 
 ### Optimization Done ✓
+
 - Vite for super-fast builds
 - Code splitting & lazy loading
 - Tailwind JIT compilation
@@ -296,6 +321,7 @@ Edit components in `src/components/`:
 - Gzip compression (69 kB)
 
 ### Further Optimization (Optional)
+
 ```javascript
 // Limit visualization elements
 const MAX_ELEMENTS = 50;
@@ -304,7 +330,7 @@ const MAX_ELEMENTS = 50;
 const explanationCache = new Map();
 
 // Lazy load 3D libraries
-import('three').then(module => {
+import("three").then((module) => {
   // Use Three.js
 });
 ```
@@ -314,7 +340,9 @@ import('three').then(module => {
 ## 🐛 Troubleshooting
 
 ### Problem: Port 3000 already in use
+
 **Solution:**
+
 ```bash
 # Kill the process using port 3000
 lsof -ti:3000 | xargs kill -9  # macOS/Linux
@@ -322,14 +350,18 @@ netstat -ano | findstr :3000    # Windows
 ```
 
 ### Problem: API calls failing (404)
+
 **Solution:**
+
 - Ensure backend running on port 5000
 - Check proxy config in `vite.config.ts`
 - Verify `/api/explain` endpoint exists
 - Check browser console for CORS errors
 
 ### Problem: Build fails
+
 **Solution:**
+
 ```bash
 # Clean install
 rm -rf node_modules package-lock.json
@@ -338,7 +370,9 @@ npm run build
 ```
 
 ### Problem: Slow on mobile
+
 **Solution:**
+
 - Reduce visualization to <20 elements
 - Use faster WiFi (5GHz if available)
 - Clear browser cache
@@ -349,26 +383,31 @@ npm run build
 ## 📚 Learning Resources
 
 ### React & TypeScript
+
 - [React Official Docs](https://react.dev)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [React Router](https://reactrouter.com)
 
 ### Styling & UI
+
 - [Tailwind CSS](https://tailwindcss.com)
 - [Lucide Icons](https://lucide.dev)
 - [CSS-in-JS Patterns](https://styled-components.com)
 
 ### 3D & AR
+
 - [Three.js Documentation](https://threejs.org/docs/)
 - [A-Frame Getting Started](https://aframe.io/docs/1.6.0/introduction/)
 - [Model Viewer](https://modelviewer.dev)
 
 ### Backend & APIs
+
 - [Express.js Guide](https://expressjs.com/en/starter/basic-routing.html)
 - [CORS Explained](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 - [RESTful API Design](https://restfulapi.net)
 
 ### Deployment
+
 - [Render Documentation](https://render.com/docs)
 - [GitHub Pages](https://pages.github.com)
 - [Vercel Alternative](https://vercel.com)
@@ -378,24 +417,28 @@ npm run build
 ## 🎯 Next Steps (Advanced)
 
 ### Week 1: Polish
+
 - [ ] Add more algorithms (insertion, selection, heap)
 - [ ] Implement step-by-step execution with pause/resume
 - [ ] Add execution speed control slider
 - [ ] Show time complexity (O notation)
 
 ### Week 2: Features
+
 - [ ] Connect real Groq API (paid tier) for dynamic explanations
 - [ ] Add custom 3D models using Three.js
 - [ ] Implement data structure visualization (trees, graphs)
 - [ ] Add pseudocode highlighting
 
 ### Week 3: Mobile
+
 - [ ] Test on actual iOS/Android devices
 - [ ] Optimize for mobile performance
 - [ ] Add PWA manifest for "Add to Home Screen"
 - [ ] Test AR features with ARCore/ARKit
 
 ### Month 2+: Scaling
+
 - [ ] Add user authentication
 - [ ] Store progress in database
 - [ ] Create practice problems
@@ -407,6 +450,7 @@ npm run build
 ## 📞 Getting Help
 
 ### If Something Breaks
+
 1. Check error message in console (F12)
 2. Review `DEPLOYMENT.md` troubleshooting section
 3. Check technology docs (links above)
@@ -418,6 +462,7 @@ npm run build
    - Expected vs actual behavior
 
 ### Community Resources
+
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/react)
 - [GitHub Discussions](https://github.com)
 - [Dev.to](https://dev.to) - Tutorial articles
@@ -445,6 +490,7 @@ Before considering the project "done":
 ## 🎉 Congratulations!
 
 You now have:
+
 - ✅ A production-ready algorithm visualizer
 - ✅ Full-stack application with React frontend & Express backend
 - ✅ Mobile-accessible web app
@@ -454,6 +500,7 @@ You now have:
 - ✅ Comprehensive documentation
 
 ### Your next move:
+
 ```bash
 # 1. Test locally
 npm run dev            # Terminal 1

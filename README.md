@@ -22,19 +22,23 @@ An interactive AR/VR platform for visualizing algorithms and data structures in 
 ## 📋 Supported Algorithms
 
 ### Sorting
+
 - Bubble Sort
 - Quick Sort
 - Merge Sort
 
 ### Searching
+
 - Linear Search
 - Binary Search
 
 ### Graph Algorithms
+
 - BFS (Breadth-First Search)
 - DFS (Depth-First Search)
 
 ### Data Structures
+
 - Linked Lists
 - Trees
 - Queues
@@ -43,6 +47,7 @@ An interactive AR/VR platform for visualizing algorithms and data structures in 
 ## 🛠️ Installation
 
 ### Prerequisites
+
 - Node.js 18+
 - npm or yarn
 
@@ -67,6 +72,7 @@ npm run server:dev
 ```
 
 ### Access the App
+
 - Frontend: `http://localhost:3000`
 - Backend: `http://localhost:5000`
 
@@ -83,6 +89,7 @@ npm start
 ## 🌐 Deploying to Render
 
 ### Step 1: Push to GitHub
+
 ```bash
 git init
 git add .
@@ -91,11 +98,13 @@ git push origin main
 ```
 
 ### Step 2: Create Render Account
+
 1. Go to [render.com](https://render.com)
 2. Sign up with GitHub
 3. Connect your repository
 
 ### Step 3: Create Web Service
+
 1. Click "New +" → "Web Service"
 2. Select your repository
 3. Fill in details:
@@ -106,7 +115,9 @@ git push origin main
 4. Deploy!
 
 ### Step 4: Environment Variables
+
 In Render Dashboard:
+
 - Settings → Environment
 - Add: `NODE_ENV=production`
 - Add: `GROQ_API_KEY=your_free_tier_key`
@@ -114,6 +125,7 @@ In Render Dashboard:
 ## 📱 Testing on Mobile
 
 ### Using Local Machine
+
 ```bash
 # Get your machine's IP
 ipconfig getifaddr en0  # macOS
@@ -125,6 +137,7 @@ http://<YOUR_IP>:3000
 ```
 
 ### Using Render (After Deployment)
+
 Visit: `https://your-app-name.onrender.com`
 
 ## 🎓 How It Works
@@ -144,14 +157,17 @@ Visit: `https://your-app-name.onrender.com`
 ## 🔧 Customization
 
 ### Add New Algorithm
+
 1. Create algorithm logic in `src/algorithms/`
 2. Add to selector in `AlgorithmSelector.tsx`
 3. Add explanation in backend `/explain` endpoint
 
 ### Modify Visualizer Colors
+
 Edit Tailwind classes in `VisualizationCanvas.tsx`
 
 ### Change AR Models
+
 Update `ARViewer.tsx` to use custom 3D models
 
 ## 📊 Performance Tips
@@ -163,6 +179,7 @@ Update `ARViewer.tsx` to use custom 3D models
 ## 🤝 Contributing
 
 Contributions welcome! Please:
+
 1. Fork the repository
 2. Create feature branch
 3. Submit pull request

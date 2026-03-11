@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import { Code2, Zap } from 'lucide-react'
+import { Link } from "react-router-dom";
+import { Code2, Zap } from "lucide-react";
 
 export default function Header() {
   return (
@@ -9,11 +9,17 @@ export default function Header() {
           <Code2 className="w-8 h-8 text-blue-500" />
           <span>CodeCraft AR</span>
         </Link>
-        
+
         <nav className="flex items-center gap-8">
-          <Link to="/" className="hover:text-blue-400 transition">Home</Link>
-          <Link to="/visualizer" className="hover:text-blue-400 transition">Visualizer</Link>
-          <a href="#docs" className="hover:text-blue-400 transition">Docs</a>
+          <Link to="/" className="hover:text-blue-400 transition">
+            Home
+          </Link>
+          <Link to="/visualizer" className="hover:text-blue-400 transition">
+            Visualizer
+          </Link>
+          <a href="#docs" className="hover:text-blue-400 transition">
+            Docs
+          </a>
         </nav>
 
         <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg flex items-center gap-2 transition">
@@ -22,5 +28,5 @@ export default function Header() {
         </button>
       </div>
     </header>
-  )
+  );
 }
